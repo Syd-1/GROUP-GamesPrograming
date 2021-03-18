@@ -16,6 +16,7 @@ public class CameraScript : MonoBehaviour
     {
         MouseAiming();
         KeyboardMovement();
+
     }
 
     void MouseAiming()
@@ -40,4 +41,5 @@ public class CameraScript : MonoBehaviour
 
         transform.Translate(dir * moveSpeed * Time.deltaTime);
     }
+
 }
