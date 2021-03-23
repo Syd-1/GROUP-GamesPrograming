@@ -23963,7 +23963,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
@@ -25937,6 +25937,7 @@ GameObject:
   - component: {fileID: 753431618}
   - component: {fileID: 753431617}
   - component: {fileID: 753431619}
+  - component: {fileID: 753431620}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -26031,7 +26032,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 753431612}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2c748ac905f5204b8735ebd4168de67, type: 3}
+  m_Script: {fileID: 11500000, guid: 9159527e59dae7443b5059949861f64f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!54 &753431618
@@ -26065,6 +26066,18 @@ MonoBehaviour:
   maxHealth: 90
   currentHealth: 0
   healthBar: {fileID: 1699481496}
+--- !u!114 &753431620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753431612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 467da8a4fc700b0419efc9d856784851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &754467039
 PrefabInstance:
   m_ObjectHideFlags: 0
