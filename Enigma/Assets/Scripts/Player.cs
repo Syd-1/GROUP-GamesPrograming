@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 	void Update()
 	{
 		//needs to change to when hit bby enemy 
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.Q))
 		{
 			TakeDamage(30);
 		}
