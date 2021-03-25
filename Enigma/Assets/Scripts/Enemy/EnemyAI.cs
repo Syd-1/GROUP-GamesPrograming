@@ -24,15 +24,13 @@ public class EnemyAI : MonoBehaviour
     private Patrol patrol;
     private Chase chase;
     private Investigate investigate;
-    private Attack attack;
 
     private GameObject player;
     private NavMeshAgent agent;
-    private CapsuleCollider capCollider;
 
     private float playerDistance;
     private float attackTimer = 0f;
-    private float attackRange = 2f;
+    private float attackRange = 5f;
     private float investigateTimer = 0f;
 
     private void Awake()
@@ -41,11 +39,9 @@ public class EnemyAI : MonoBehaviour
         stateAnimationController = GetComponent<StateAnimationController>();
         player = GameObject.Find("Player");
         agent = GetComponent<NavMeshAgent>();
-        capCollider = GetComponent<CapsuleCollider>();
         patrol = GetComponent<Patrol>();
         chase = GetComponent<Chase>();
         investigate = GetComponent<Investigate>();
-        attack = GetComponent<Attack>();
         state = State.Patrol;
     }
 
@@ -79,7 +75,6 @@ public class EnemyAI : MonoBehaviour
                 TargetInAttackRange();
                 if (attackTimer > 2f)
                 {
-                    capCollider.radius = 0.15f; // sword reach
                     attackTimer = 0;
                 }
                 break;
@@ -90,7 +85,6 @@ public class EnemyAI : MonoBehaviour
         }
 
         stateAnimationController.UpdateAnimationController(state.ToString());
-        capCollider.radius = 0.05f;
     }
 
     private void TargetInAttackRange()

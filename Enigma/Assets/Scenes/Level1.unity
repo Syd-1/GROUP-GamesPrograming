@@ -15395,6 +15395,7 @@ GameObject:
   - component: {fileID: 468422021}
   - component: {fileID: 468422020}
   - component: {fileID: 468422019}
+  - component: {fileID: 468422027}
   - component: {fileID: 468422017}
   - component: {fileID: 468422018}
   - component: {fileID: 468422026}
@@ -15402,9 +15403,10 @@ GameObject:
   - component: {fileID: 468422023}
   - component: {fileID: 468422025}
   - component: {fileID: 468422024}
+  - component: {fileID: 468422028}
   m_Layer: 0
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15418,7 +15420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468422015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6000004, y: -0.3, z: -6.34}
+  m_LocalPosition: {x: -0.6000004, y: -0.3, z: -6.085}
   m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children:
   - {fileID: 1432744303}
@@ -15584,6 +15586,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 468422018}
+  animator: {fileID: 468422021}
+--- !u!135 &468422027
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468422015}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.08
+  m_Center: {x: 0, y: 0.1, z: 0.05}
+--- !u!114 &468422028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468422015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93ced918e166414e84ad80df63f1ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   animator: {fileID: 468422021}
 --- !u!1001 &471721659
 PrefabInstance:
@@ -49914,7 +49942,7 @@ GameObject:
   - component: {fileID: 1343818807}
   m_Layer: 0
   m_Name: Health
-  m_TagString: Untagged
+  m_TagString: Health
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50008,7 +50036,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343818803}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.40625
@@ -50493,7 +50521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367054026}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.05929612, y: 0.07498819, z: 0.004813067}
+  m_LocalPosition: {x: -0.052, y: 0.075, z: 0.029}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 468422016}

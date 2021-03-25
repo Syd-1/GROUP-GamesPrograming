@@ -17,21 +17,19 @@ public class Player : MonoBehaviour
 		healthBar.SetMaxHealth(maxHealth);
 	}
 
-	// Update is called once per frame
-	void Update()
-	{
-		//needs to change to when hit bby enemy 
-		if (Input.GetKeyDown(KeyCode.Q))
+    // On collision with enemy sword take damage
+    private void OnTriggerEnter(Collider other)
+    {
+		if (other.gameObject.tag == "Enemy")
 		{
 			TakeDamage(30);
 		}
 	}
 
-	void TakeDamage(int damage)
+    void TakeDamage(int damage)
 	{
 		currentHealth -= damage;
 
 		healthBar.SetHealth(currentHealth);
 	}
-
 }
