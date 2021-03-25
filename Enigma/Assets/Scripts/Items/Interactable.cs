@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    public float radius = 1f;
+    public float radius = 3f;
     public Transform interactableTramsform;
 
     bool isFocus = false;
-    Transform player;
+    public Transform player;
 
     bool hasInteracted = false;
 
@@ -24,10 +24,12 @@ public class Interactable : MonoBehaviour
         //and we havnt already interacted with the object 
         if(isFocus && !hasInteracted)
         {
+            Debug.Log("Curretly focused on object");
             //if we are close enough
             float distance = Vector3.Distance(player.position, interactableTramsform.position);
             if (distance <= radius)
             {
+                Debug.Log("Interact");
                 //interact with the object 
                 Interact();
                 hasInteracted = true;
@@ -51,6 +53,11 @@ public class Interactable : MonoBehaviour
     //draws a radius in the editor 
     void OnDrawGizmosSelected ()
     {
+        if(interactableTramsform == null)
+        {
+            interactableTramsform = transform;
+        }
+
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(interactableTramsform.position, radius);
     }

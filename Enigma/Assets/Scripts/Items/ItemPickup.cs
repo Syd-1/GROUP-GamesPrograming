@@ -16,6 +16,7 @@ public class ItemPickup : Interactable
 
     void PickUp()
     {
+        Debug.Log("Picking up item");
         //add to inventory 
         bool wasPickedUp = Inventory.instance.Add(item);
 
