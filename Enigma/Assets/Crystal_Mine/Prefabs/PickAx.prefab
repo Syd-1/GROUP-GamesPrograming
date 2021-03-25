@@ -200,6 +200,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4579825387947210}
   - component: {fileID: 3006772242877039551}
+  - component: {fileID: 4155776861069860374}
+  - component: {fileID: 8739409466837305999}
   m_Layer: 0
   m_Name: PickAx
   m_TagString: Untagged
@@ -237,5 +239,34 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &4155776861069860374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815512075867338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1fe84236875ea47807a441178a79ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  interactableTramsform: {fileID: 4579825387947210}
+  player: {fileID: 0}
+  item: {fileID: 11400000, guid: 9a7bd42b58c2a8e4a9476b10eccf2ab5, type: 2}
+--- !u!135 &8739409466837305999
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815512075867338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.5, z: 0}
