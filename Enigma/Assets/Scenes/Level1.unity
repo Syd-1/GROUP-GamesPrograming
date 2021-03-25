@@ -15397,8 +15397,11 @@ GameObject:
   - component: {fileID: 468422019}
   - component: {fileID: 468422017}
   - component: {fileID: 468422018}
+  - component: {fileID: 468422026}
   - component: {fileID: 468422022}
   - component: {fileID: 468422023}
+  - component: {fileID: 468422025}
+  - component: {fileID: 468422024}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -15436,14 +15439,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be94724d9f149d4db4344e557b21abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 0
-  viewAngle: 0
+  viewRadius: 15
+  viewAngle: 75
   targetMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   targetLastKnownPosition: {x: 0, y: 0, z: 0}
   visibleTargets: []
 --- !u!195 &468422018
@@ -15530,7 +15533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f106a9ffded1c240a5463d0dc843c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 168223080}
 --- !u!114 &468422023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15543,6 +15547,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacb2afb6c6ba724281af5a0601aae6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &468422024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468422015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d9706fac7e1d74da4007667e9f495d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &468422025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468422015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1092077cf07e064c9e30e1fcb7dd588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &468422026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468422015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace997fbe3a0dd348a8ba1c316e55cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 468422018}
+  animator: {fileID: 468422021}
 --- !u!1001 &471721659
 PrefabInstance:
   m_ObjectHideFlags: 0
