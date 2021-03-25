@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 
 	public int maxHealth = 90;
 	public int currentHealth;
+	public bool heal = false;
 
 	public HealthBar healthBar;
 
@@ -24,7 +25,18 @@ public class Player : MonoBehaviour
 		{
 			TakeDamage(30);
 		}
+
+		if (other.gameObject.tag == "Health")
+		{
+			AddHealth(30);
+			heal = true;
+            if (heal == true)
+            {
+				Destroy(GameObject.FindWithTag("Health"));
+			}
+		}
 	}
+
 
     void TakeDamage(int damage)
 	{
@@ -32,4 +44,11 @@ public class Player : MonoBehaviour
 
 		healthBar.SetHealth(currentHealth);
 	}
+
+	void AddHealth(int health)
+    {
+		currentHealth += health;
+
+		healthBar.SetHealth(currentHealth);
+    }
 }

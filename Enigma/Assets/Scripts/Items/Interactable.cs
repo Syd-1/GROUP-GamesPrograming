@@ -24,12 +24,12 @@ public class Interactable : MonoBehaviour
         //and we havnt already interacted with the object 
         if(isFocus && !hasInteracted)
         {
-            Debug.Log("Curretly focused on object");
+            //Debug.Log("Curretly focused on object");
             //if we are close enough
             float distance = Vector3.Distance(player.position, interactableTramsform.position);
             if (distance <= radius)
             {
-                Debug.Log("Interact");
+                //Debug.Log("Interact");
                 //interact with the object 
                 Interact();
                 hasInteracted = true;
