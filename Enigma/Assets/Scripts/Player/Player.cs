@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 
 	public int maxHealth = 90;
 	public int currentHealth;
-	public bool heal = false;
+	public bool canHeal = false;
 
 	public HealthBar healthBar;
 
@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 	}
 
     // On collision with enemy sword take damage
+
     private void OnTriggerEnter(Collider other)
     {
 		if (other.gameObject.tag == "Enemy")
@@ -26,14 +27,18 @@ public class Player : MonoBehaviour
 			TakeDamage(30);
 		}
 
+		//health kit - check if the player collided with a heart
 		if (other.gameObject.tag == "Health")
 		{
-			AddHealth(30);
-			heal = true;
-            if (heal == true)
+			if(currentHealth < maxHealth)
             {
-				Destroy(GameObject.FindWithTag("Health"));
-			}
+				canHeal = true;
+				if (canHeal == true)
+                {
+					AddHealth(30);
+					Destroy(other.gameObject);
+				}
+            }
 		}
 	}
 
