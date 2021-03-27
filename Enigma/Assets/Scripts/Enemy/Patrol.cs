@@ -35,7 +35,6 @@ public class Patrol : MonoBehaviour
             waitTimer = Random.Range(0, 10f);
         }
 
-        Debug.Log(agent.isOnNavMesh);
         if (agent.isOnNavMesh)
         {
             agent.destination = targetWaypoint.position;
