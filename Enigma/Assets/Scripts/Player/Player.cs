@@ -9,8 +9,6 @@ public class Player : MonoBehaviour
 	public int maxHealth = 90;
 	public int currentHealth;
 	public bool canHeal = false;
-	public bool hasAllKeys = false;
-	public int numberOfKeys;
 
 	public HealthBar healthBar;
 	public GameObject deathPanel;
@@ -21,13 +19,12 @@ public class Player : MonoBehaviour
 	{
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
-		numberOfKeys = GameObject.FindGameObjectsWithTag("Key").Length;
 		deathPanel.SetActive(false);
 	}
 
-    // On collision with enemy sword take damage
+	// On collision with enemy sword take damage
 
-    private void OnTriggerEnter(Collider other)
+	private void OnTriggerEnter(Collider other)
     {
 		if (other.gameObject.tag == "Enemy")
 		{
@@ -47,19 +44,9 @@ public class Player : MonoBehaviour
 				}
             }
 		}
-
-		if (other.gameObject.tag == "Key")
-		{
-			Destroy(other.gameObject);
-			numberOfKeys--;
-			if (numberOfKeys == 0)
-            {
-				hasAllKeys = true;
-			}
-		}
 	}
 
-    void TakeDamage(int damage)
+	void TakeDamage(int damage)
 	{
 		currentHealth -= damage;
 
@@ -104,4 +91,5 @@ public class Player : MonoBehaviour
 			Time.timeScale = 1;
 		}
 	}
+
 }
