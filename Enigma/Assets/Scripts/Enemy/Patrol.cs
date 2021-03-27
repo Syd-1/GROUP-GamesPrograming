@@ -9,7 +9,7 @@ public class Patrol : MonoBehaviour
     private int randomIndex;
 
     private float targetDistance;
-    private float targetThreshold = 3f;
+    private float targetThreshold = 5f;
     private float waitTimer = 0f;
 
     // Update is called once per frame
@@ -28,13 +28,14 @@ public class Patrol : MonoBehaviour
         waitTimer += Time.deltaTime;
 
         // Choose new waypoint if target reached
-        if (targetDistance < targetThreshold && waitTimer > 10f)
+        if (targetDistance < targetThreshold && waitTimer > 20f)
         {
             randomIndex = Random.Range(0, waypoints.Count);
             targetWaypoint = waypoints[randomIndex];
-            waitTimer = Random.Range(0, 4f);
+            waitTimer = Random.Range(0, 10f);
         }
 
+        Debug.Log(agent.isOnNavMesh);
         if (agent.isOnNavMesh)
         {
             agent.destination = targetWaypoint.position;
