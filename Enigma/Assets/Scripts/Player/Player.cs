@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Player : MonoBehaviour
 	public int numberOfKeys;
 
 	public HealthBar healthBar;
+	public GameObject deathPanel;
+	private bool pauseGame = false;
 
 	// Start is called before the first frame update
 	void Start()
@@ -19,6 +22,7 @@ public class Player : MonoBehaviour
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
 		numberOfKeys = GameObject.FindGameObjectsWithTag("Key").Length;
+		deathPanel.SetActive(false);
 	}
 
     // On collision with enemy sword take damage
@@ -55,12 +59,16 @@ public class Player : MonoBehaviour
 		}
 	}
 
-
     void TakeDamage(int damage)
 	{
 		currentHealth -= damage;
 
 		healthBar.SetHealth(currentHealth);
+
+		if (currentHealth <= 0f)
+		{
+			Die();
+		}
 	}
 
 	void AddHealth(int health)
@@ -69,4 +77,31 @@ public class Player : MonoBehaviour
 
 		healthBar.SetHealth(currentHealth);
     }
+
+	public void Die()
+	{
+		deathPanel.SetActive(true);
+		ToggleTime();
+	}
+
+	public void Restart()
+	{
+		ToggleTime();
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
+	//https://www.youtube.com/watch?v=f6BvWzAEews
+	private void ToggleTime()
+	{
+		pauseGame = !pauseGame;
+
+		if (pauseGame)
+		{
+			Time.timeScale = 0;
+		}
+		else
+		{
+			Time.timeScale = 1;
+		}
+	}
 }
