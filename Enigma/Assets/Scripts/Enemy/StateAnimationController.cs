@@ -8,7 +8,7 @@ public class StateAnimationController : MonoBehaviour
     public NavMeshAgent agent;
     public Animator animator;
 
-    public void UpdateAnimationController(string state)
+    public void UpdateAnimationController(string state, float attackTimer)
     {
         switch (state)
         {
@@ -37,7 +37,10 @@ public class StateAnimationController : MonoBehaviour
                 break;
 
            case "Attack":
-                animator.SetBool("IsAttacking", true);
+                if (attackTimer > 2f)
+                {
+                    animator.SetBool("IsAttacking", true);
+                }
                 animator.SetBool("IsInvestigating", false);
                 break;
         }
