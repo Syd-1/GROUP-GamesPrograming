@@ -28,7 +28,7 @@ public class Patrol : MonoBehaviour
         waitTimer += Time.deltaTime;
 
         // Choose new waypoint if target reached
-        if (targetDistance < targetThreshold && waitTimer > 20f)
+        if (targetDistance < targetThreshold && waitTimer > 20f || waitTimer > 30f)
         {
             randomIndex = Random.Range(0, waypoints.Count);
             targetWaypoint = waypoints[randomIndex];
